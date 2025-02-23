@@ -21,6 +21,8 @@ export class ConvertCardComponent {
   router = inject(Router);
 
   navigateTo(route: string) {
-    this.router.navigateByUrl(route);
+    this.router.navigate([route], {
+      queryParams: { source: this.convertType.source, destination: this.convertType.destination }
+    });
   }
 }

@@ -9,7 +9,7 @@ export let themes: Theme[] = [
   },
   {
     id: 'dark',
-    primary: '#092635',
+    primary: '#001021',
     displayName: 'Dark Theme',
     icon: 'dark_mode',
   },
