@@ -1,5 +1,4 @@
 import {Component, inject, Input} from '@angular/core';
-import {MatGridListModule} from "@angular/material/grid-list";
 import { MatIconModule} from '@angular/material/icon';
 import {ConvertType} from '../../models/convertType.model';
 import {Router} from '@angular/router';
@@ -21,6 +20,8 @@ export class ConvertCardComponent {
   router = inject(Router);
 
   navigateTo(route: string) {
-    this.router.navigateByUrl(route);
+    this.router.navigate([route], {
+      queryParams: { source: this.convertType.source, destination: this.convertType.destination }
+    });
   }
 }

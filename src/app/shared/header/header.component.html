@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <span>FileVerto</span>
+  <span (click)="goHome()">FileVerto</span>
   <button mat-icon-button (click)="toggleTheme()">
     <mat-icon matTooltip="{{currentTheme.displayName}}">{{ currentTheme.icon }}</mat-icon>
   </button>

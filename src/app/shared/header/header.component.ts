@@ -4,6 +4,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {ThemeService} from '../../services/theme.service';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,13 +13,19 @@ import {MatTooltipModule} from '@angular/material/tooltip';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-
   themeService = inject(ThemeService);
-  currentTheme = this.themeService.currentTheme(); // Get the current theme
+  router = inject(Router);
+
+  get currentTheme() {
+    return this.themeService.currentTheme(); // Reactive signal
+  }
 
   toggleTheme() {
-    const nextTheme = this.currentTheme.id === 'light' ? 'dark' : 'light';
-    this.themeService.setTheme(nextTheme);
-    this.currentTheme = this.themeService.currentTheme(); // Update the current theme after switching
+    const nextThemeId = this.currentTheme.id === 'light' ? 'dark' : 'light';
+    this.themeService.setTheme(nextThemeId);
+  }
+
+  goHome(){
+    this.router.navigate(['/']);
   }
 }

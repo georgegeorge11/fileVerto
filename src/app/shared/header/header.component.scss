@@ -20,3 +20,11 @@ mat-toolbar {
   gap: 12px;
 }
 
+span {
+  cursor: pointer;
+}
+
+span:hover{
+  transform: scale(1.01);
+}
+
