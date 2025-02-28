@@ -1,3 +1,6 @@
 [submodule "fileverto.ui"]
 	path = fileverto.ui
 	url = https://github.com/georgegeorge11/fileverto.ui.git
+[submodule "fileverto.api"]
+	path = fileverto.api
+	url = https://github.com/georgegeorge11/fileverto.api.git
